@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Japones Terra Planagem</title>
+  <link rel="stylesheet" type="text/css" href="./css/estilo.css" />
+  <!--[if lte IE 8]>
+ <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+  
+ 
+<script type="text/javascript" >
+	function setaImagem(){
+	    var settings = {
+	        primeiraImg: function(){
+	            elemento = document.querySelector("#slider a:first-child");
+	            elemento.classList.add("ativo");
+	            this.legenda(elemento);
+	        },
+	 
+	        slide: function(){
+	            elemento = document.querySelector(".ativo");
+	 
+	            if(elemento.nextElementSibling){
+	                elemento.nextElementSibling.classList.add("ativo");
+	                settings.legenda(elemento.nextElementSibling);
+	                elemento.classList.remove("ativo");
+	            }else{
+	                elemento.classList.remove("ativo");
+	                settings.primeiraImg();
+	            }
+	 
+	        },
+	 
+	        proximo: function(){
+	            clearInterval(intervalo);
+	            elemento = document.querySelector(".ativo");
+	 
+	            if(elemento.nextElementSibling){
+	                elemento.nextElementSibling.classList.add("ativo");
+	                settings.legenda(elemento.nextElementSibling);
+	                elemento.classList.remove("ativo");
+	            }else{
+	                elemento.classList.remove("ativo");
+	                settings.primeiraImg();
+	            }
+	            intervalo = setInterval(settings.slide,4000);
+	        },
+	 
+	        anterior: function(){
+	            clearInterval(intervalo);
+	            elemento = document.querySelector(".ativo");
+	 
+	            if(elemento.previousElementSibling){
+	                elemento.previousElementSibling.classList.add("ativo");
+	                settings.legenda(elemento.previousElementSibling);
+	                elemento.classList.remove("ativo");
+	            }else{
+	                elemento.classList.remove("ativo");						
+	                elemento = document.querySelector("a:last-child");
+	                elemento.classList.add("ativo");
+	                this.legenda(elemento);
+	            }
+	            intervalo = setInterval(settings.slide,4000);
+	        },
+	 
+	        legenda: function(obj){
+	            var legenda = obj.querySelector("img").getAttribute("alt");
+	            document.querySelector("figcaption").innerHTML = legenda;
+	        }
+	 
+	    }
+	 
+	    //chama o slide
+	    settings.primeiraImg();
+	 
+	    //chama a legenda
+	    settings.legenda(elemento);
+	 
+	    //chama o slide à um determinado tempo
+	    var intervalo = setInterval(settings.slide,4000);
+	    document.querySelector(".next").addEventListener("click",settings.proximo,false);
+	    document.querySelector(".prev").addEventListener("click",settings.anterior,false);
+	}
+    window.addEventListener("load",setaImagem,false);
+</script>
+  
+</head>
+
+<body>
+	<div class="site">
+		<div class="contato">
+			<div class="contato-email"  >Email: japonesterraplanagem@gmail.com</div>
+			<div class="contato-fone"> Fones: (44) 9867-7363(tim/wattszapp)   (44) 9148-5054(vivo)</div>
+
+		</div>
+		<div class="geral">
+			<form>
+				<p class="logo">
+				  	<img src="cabeclho2.jpg" alt="" width="100%"
+						height="180px" />
+				</p>
+				<br />
+
+				<ul class="menu">
+					<li><a href="index.xhtml">Home</a></li>
+					<li><a href="#">Institucional</a></li>
+					<li><a href="#">O que fazemos?</a></li>
+					<li><a href="#">Serviços</a>
+						<ul>
+							<li><a href="#">Caminhão Prancha</a></li>
+							<li><a href="#">Curva de Nível e Nivelamento de Terrenos</a></li>
+							<li><a href="#">Terraplanagem</a></li>
+							<li><a href="#">Escavação de Piscinas</a></li>
+							<li><a href="#">Escavação Hidraulicas</a></li>
+						</ul></li>
+					<li><a href="#">Contato</a></li>
+				</ul>
+
+
+
+			</form>
+		</div>
+		<div>
+			<figure> <span class="trs next"></span> <span
+				class="trs prev"></span>
+
+			<div id="slider">
+				<a href="#" class="trs"><img src="./image/imagem1.jpg"
+					 /></a> <a href="#" class="trs" ><img
+					src="./image/imagem2.jpg"  /></a> <a
+					href="#" class="trs"><img src="./image/imagem3.jpg"
+					 /></a> <a href="#" class="trs"><img
+					src="./image/imagem4.jpg"  /></a>
+			</div>
+
+			<figcaption></figcaption> </figure>
+		</div>
+
+		<div>
+			<p class="footer">
+				<a
+					href="https://www.facebook.com/japonesterraplanagememgeral/?fref=ts" >Facebook</a>
+			</p>
+		</div>
+
+
+
+
+	</div>
+</body>
+</html>
