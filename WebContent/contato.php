@@ -176,7 +176,7 @@ $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
 $mailer = Swift_Mailer::newInstance($transport);
 
 
-$emailSetTO='contato@tifire.com';
+$emailSetTO='ednerzuconelli@gmail.com';
 $nome=$_POST["nome"];
 $telefone=$_POST["telefone"];
 $email=$_POST["email"];
