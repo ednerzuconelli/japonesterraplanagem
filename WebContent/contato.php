@@ -10,7 +10,7 @@
 
 $(document).ready(function(){
 	
-    $("#telefone").mask("(99) 9999-9999");
+    $("#telefone").mask("(99) 99999-9999");
     
    
 		
@@ -58,7 +58,7 @@ verifyVazio();
 <body>
     <div class="site">
 		<div class="contato">
-			<div class="contato-email"  >Email: japonesterraplanagem@gmail.com</div>
+			<div class="contato-email"  >Email1: japonesterraplanagem@gmail.com</div>
 			<div class="contato-fone"> Fones: (44) 9867-7363(tim)   (44) 9148-5054(vivo)</div>
 
 		</div>
@@ -66,7 +66,7 @@ verifyVazio();
 			
 			
 				<p class="logo">
-				  	<img src="cabecalho02.jpg" alt="" width="100%"
+				  	<img src="logo-marrom.png" alt="" width="100%"
 						height="180px" />
 				</p>
 	 			
@@ -187,7 +187,7 @@ $mensagem=$_POST["mensagem"];
 
 
 $message = Swift_Message::newInstance($assunto)
-  ->setFrom(array('japonesterraplanagem@gmail.com' => $nome))
+  ->setFrom(array('sgitifire@gmail.com' => $nome))
   ->setTo(array($emailSetTO))
   ->setBody("Nome=".$nome."\n"."Telefone=".$telefone."\n"."Email= ".$email."\n"."Cidade\Estado=".$cidade."\\".$estado."\n"."Assunto=".$assunto."\n\n".$mensagem);
 
